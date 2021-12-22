@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-DOMAIN="mail2.bsr-hotel.de"
+DOMAIN="your-domain"
 #
 iptables -A INPUT -p tcp -m multiport --dport 80,443 -j ACCEPT
 #

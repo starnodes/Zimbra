@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-DOMAIN="mail2.bsr-hotel.de"
+DOMAIN="your-domain"
 #
 yum install epel-release -y
 yum install certbot -y
