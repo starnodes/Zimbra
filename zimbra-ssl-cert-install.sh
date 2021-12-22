@@ -2,15 +2,19 @@
 #
 DOMAIN="mail2.bsr-hotel.de"
 #
-yum install epel-release
-yum install certbot
-#iptables -A INPUT -p tcp -m multiport --dport 80,443 -j ACCEPT
+yum install epel-release -y
+yum install certbot -y
+#
+iptables -A INPUT -p tcp -m multiport --dport 80,443 -j ACCEPT
+#
 certbot certonly --standalone -d $DOMAIN
-#iptables -D INPUT -p tcp -m multiport --dport 80,443 -j ACCEPT
+#
+iptables -D INPUT -p tcp -m multiport --dport 80,443 -j ACCEPT
+#
 cd /etc/letsencrypt/live/$DOMAIN/ || exit
 #wget -4 -O /etc/letsencrypt/live/$DOMAIN/zimbra_chain.pem https://letsencrypt.org/certs/trustid-x3-root.pem.txt
 wget -4 -O /etc/letsencrypt/live/$DOMAIN/zimbra_chain.pem https://letsencrypt.org/certs/isrgrootx1.pem.txt
-
+#
 cat /etc/letsencrypt/live/$DOMAIN/chain.pem >> /etc/letsencrypt/live/$DOMAIN/zimbra_chain.pem
 #
 tar -czf /opt/zimbra/ssl/zimbra-$(date +"%d.%m.%y_%H.%M").tar.gz /opt/zimbra/ssl/zimbra
