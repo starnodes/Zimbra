@@ -1,5 +1,5 @@
 # Zimbra
-These scripts will help you automatically deploy and update the CCL certificates for the Zimbra mail server.
+These scripts will help you automatically deploy and update the SSL certificates for the Zimbra mail server.
 
 Don't forget to enter a variable DOMAIN="your-domain"
 
