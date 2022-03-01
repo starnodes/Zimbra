@@ -13,6 +13,6 @@ $HOME/zimbra-ssl-cert-install.sh
 
 For auto update install use command:
 
-wget -qO /etc/cron.monthly/zimbra-ssl-cert-update.sh https://raw.githubusercontent.com/toxi42/Zimbra/main/zimbra-ssl-cert-update.sh
+wget -qO /etc/cron.monthly/certupdate https://raw.githubusercontent.com/toxi42/Zimbra/main/zimbra-ssl-cert-update.sh
 
-chmod +x /etc/cron.monthly/zimbra-ssl-cert-update.sh
+chmod +x /etc/cron.monthly/certupdate
